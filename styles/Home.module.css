@@ -1,14 +1,23 @@
 .container {
   min-height: 100vh;
-  padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+.container button:disabled {
+  background-color: #004c3f;
+  color:lightgray;
+}
+
+.top {
+  background: #fbf7ed;
+  padding: 3rem 0 2rem 0;
+}
+
 .main {
-  padding: 5rem 0;
+  background: #ffffff;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -17,13 +26,14 @@
 }
 
 .footer {
-  color: #004c3f;
+  color: lightgray;
   width: 100%;
   height: 100px;
   border-top: 1px solid #eaeaea;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #004c3f;
 }
 
 .footer span {
@@ -39,7 +49,7 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 8rem;
   display: flex;
   justify-content: center;
 }
@@ -56,18 +66,18 @@
 
 .description {
   line-height: 1.5;
-  font-size: 1.75rem;
+  font-size: 2rem;
   color: #004c3f;
+  font-family: Helvetica;
 }
 
 
 .grid {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
-  max-width: 800px;
-  margin-top: 3rem;
+  max-width: 90%;
+  margin: 3rem 0 3rem 0;
 }
 
 .search {
@@ -82,6 +92,47 @@
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
+.search input {
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 15px 20px;
+  margin-right: 10px;
+  border: #008060 2px solid;
+  width: 78%;
+
+}
+
+.search input::placeholder {
+  color: lightgray;
+}
+
+.search input:focus {
+  outline: none;
+}
+
+.search button {
+  background-color: #008060;
+  color: white;
+  width: 20%;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 15px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+}
+
+.search button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2pt rgba(203, 209, 216, 0.25);
+}
+
+.search button:hover {
+  background-color: #004c3f;
+  transition: ease-in-out 0.3s;
+}
+
 .search h3 {
   margin: 0 0 1rem 0;
   font-size: 1.5rem;
@@ -91,6 +142,10 @@
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.5;
+}
+
+.spinner {
+  color: #ffffff;
 }
 
 .card {
@@ -114,6 +169,8 @@
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.5;
+  text-align: center;
+  color: #004c3f;
 }
 
 .logo {
@@ -122,6 +179,121 @@
 
 .logo2 {
   height: 2em;
+}
+
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-height: 800px;
+  width: 100%;
+  overflow: scroll;
+}
+
+.movie {
+  padding: 20px 0 30px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0;
+  background: #fbf7ed;
+  border-radius: 5px;
+}
+
+.movie h4 {
+  color: #004c3f;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.movie button {
+  background-color: #008060;
+  color: white;
+  margin-top: 20px;
+  width: 200px;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 7px 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  pointer-events: visible;
+  transition: ease-in-out 0.3s;
+}
+
+.movie button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2pt rgba(203, 209, 216, 0.25);
+}
+
+.movie button:hover {
+  background-color: #004c3f;
+  transition: ease-in-out 0.3s;
+}
+
+.poster {
+  width: 200px;
+  box-shadow: 5px 7px 20px #004c3f;
+}
+
+.outerCont {
+  display: flex;
+  justify-content: center;
+}
+
+.alert{
+  position: fixed;
+  z-index: 1;
+  width: 40vw;
+  margin: 25vh 0 0 0;
+  padding: 20px 40px;
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fbf7ed;
+  color: #004c3f;
+  border-radius: 5px;
+  box-shadow: 2px 2px 20px gray;
+}
+
+.alert header {
+  border-bottom: 1px solid #eaeaea;
+  width: 100%;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.alert button {
+  background-color: #008060;
+  color: white;
+  margin-top: 20px;
+  width: 200px;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 7px 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  pointer-events: visible;
+  transition: ease-in-out 0.3s;
+}
+
+.alert button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2pt rgba(203, 209, 216, 0.25);
+}
+
+.alert button:hover {
+  background-color: #004c3f;
+  transition: ease-in-out 0.3s;
+}
+
+.darken {
+  filter: blur(5px) brightness(0.6);
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
 }
 
 @media (max-width: 600px) {
