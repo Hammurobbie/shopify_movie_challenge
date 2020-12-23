@@ -67,8 +67,6 @@ export default function Home() {
 
   const handleCancelAlert = () => setAlert(false);
 
-  console.log(searchResults)
-
   return (
     <div className={styles.outerCont}>
     {alert ? (
@@ -76,7 +74,7 @@ export default function Home() {
       <header>
       <h3>Thank You!</h3>
       </header>
-      <p>You've nominated your top five movies for The Shoppies. You must remove a movie from your list before you can add another.</p>
+      <p>You've nominated your top five movies for The Shoppies. Remove a movie from your list if you'd like to add another.</p>
       <div>
       <button onClick={handleCancelAlert}>Okay</button>
       </div>
@@ -122,7 +120,7 @@ export default function Home() {
             {searchResults.length > 0
               ? searchResults.map((movie) =>
                   movie.title ? (
-                    <div key={movie.id} className={styles.movie}>
+                    <div key={movie.id + Math.random()} className={styles.movie}>
                         <h4>{movie.title}</h4>
                         {movie.image ? (
                           <img className={styles.poster} alt={movie.title} src={movie.image.url} />
@@ -148,7 +146,7 @@ export default function Home() {
             <div className={styles.results}>
             {nom.length > 0 ? nom.map(movie => (
               movie.title ? (
-                <div key={movie.id} className={styles.movie}>
+                <div key={movie.id + Math.random()} className={styles.movie}>
                     <h4>{movie.title}</h4>
                     {movie.image ? (
                       <img className={styles.poster} alt={movie.title} src={movie.image.url} />
