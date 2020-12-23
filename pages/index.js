@@ -38,6 +38,7 @@ export default function Home() {
         setSearchResults(res.data.results);
         setLoading(false);
         setSearched(searchValue)
+        document.getElementById("search").scrollIntoView();
       })
       .catch((err) => {
         console.log(err.message);
@@ -99,7 +100,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className={styles.grid}>
-          <div className={styles.search}>
+          <div id="search" className={styles.search}>
             <h3>Movie Title</h3>
             <form onSubmit={handleSearch}>
             <input
